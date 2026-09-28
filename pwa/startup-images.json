@@ -1,0 +1,86 @@
+[
+  {
+    "file": "iphone-se.png",
+    "width": 640,
+    "height": 1136,
+    "media": "screen and (device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+  },
+  {
+    "file": "iphone-8.png",
+    "width": 750,
+    "height": 1334,
+    "media": "screen and (device-width: 375px) and (device-height: 667px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+  },
+  {
+    "file": "iphone-8-plus.png",
+    "width": 1242,
+    "height": 2208,
+    "media": "screen and (device-width: 414px) and (device-height: 736px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+  },
+  {
+    "file": "iphone-x.png",
+    "width": 1125,
+    "height": 2436,
+    "media": "screen and (device-width: 375px) and (device-height: 812px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+  },
+  {
+    "file": "iphone-xr.png",
+    "width": 828,
+    "height": 1792,
+    "media": "screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+  },
+  {
+    "file": "iphone-xs-max.png",
+    "width": 1242,
+    "height": 2688,
+    "media": "screen and (device-width: 414px) and (device-height: 896px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+  },
+  {
+    "file": "iphone-12.png",
+    "width": 1170,
+    "height": 2532,
+    "media": "screen and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+  },
+  {
+    "file": "iphone-14-plus.png",
+    "width": 1284,
+    "height": 2778,
+    "media": "screen and (device-width: 428px) and (device-height: 926px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+  },
+  {
+    "file": "iphone-14-pro.png",
+    "width": 1179,
+    "height": 2556,
+    "media": "screen and (device-width: 393px) and (device-height: 852px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+  },
+  {
+    "file": "iphone-14-pro-max.png",
+    "width": 1290,
+    "height": 2796,
+    "media": "screen and (device-width: 430px) and (device-height: 932px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+  },
+  {
+    "file": "iphone-16-pro.png",
+    "width": 1206,
+    "height": 2622,
+    "media": "screen and (device-width: 402px) and (device-height: 874px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+  },
+  {
+    "file": "iphone-16-pro-max.png",
+    "width": 1320,
+    "height": 2868,
+    "media": "screen and (device-width: 440px) and (device-height: 956px) and (-webkit-device-pixel-ratio: 3) and (orientation: portrait)"
+  },
+  {
+    "file": "ipad.png",
+    "width": 1536,
+    "height": 2048,
+    "media": "screen and (device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+  },
+  {
+    "file": "ipad-pro-11.png",
+    "width": 1668,
+    "height": 2388,
+    "media": "screen and (device-width: 834px) and (device-height: 1194px) and (-webkit-device-pixel-ratio: 2) and (orientation: portrait)"
+  }
+]
