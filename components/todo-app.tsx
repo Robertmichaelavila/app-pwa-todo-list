@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, type FormEvent } from "react";
+import { destroyAppTour, startAppTour } from "@/components/app-tour";
 import { PwaStatus } from "@/components/pwa-status";
 import {
   openTaskRepository,
@@ -25,6 +26,10 @@ export function TodoApp() {
   const [formError, setFormError] = useState<string | null>(null);
   const [loadError, setLoadError] = useState<string | null>(null);
   const [reloadKey, setReloadKey] = useState(0);
+
+  useEffect(() => {
+    return () => destroyAppTour();
+  }, []);
 
   useEffect(() => {
     let active = true;
@@ -110,8 +115,18 @@ export function TodoApp() {
 
   return (
     <main className="mx-auto flex min-h-dvh w-full max-w-lg flex-col px-5 pt-[max(1.25rem,env(safe-area-inset-top))] pb-[max(1.5rem,env(safe-area-inset-bottom))]">
-      <header className="pt-6">
-        <p className="text-sm tracking-[0.18em] text-accent uppercase">Neste aparelho</p>
+      <header id="tour-intro" className="pt-6">
+        <div className="flex items-center justify-between gap-3">
+          <p className="text-sm tracking-[0.18em] text-accent uppercase">Neste aparelho</p>
+          <button
+            type="button"
+            onClick={startAppTour}
+            disabled={tasks === null}
+            className="h-10 shrink-0 rounded-full border border-line px-4 text-sm disabled:opacity-40"
+          >
+            Ajuda
+          </button>
+        </div>
         <h1 className="mt-2 font-display text-5xl tracking-tight">Tarefas</h1>
         <p className="mt-3 max-w-sm text-muted">
           Salvas neste aparelho. Dá para criar, concluir e excluir sem internet.
@@ -136,6 +151,7 @@ export function TodoApp() {
         />
         <button
           type="submit"
+          id="tour-add"
           className="h-12 shrink-0 rounded-full bg-accent px-5 font-medium text-accent-ink"
         >
           Adicionar
@@ -162,6 +178,7 @@ export function TodoApp() {
           <button
             type="button"
             onClick={() => {
+              destroyAppTour();
               setLoadError(null);
               setTasks(null);
               setReloadKey((value) => value + 1);
@@ -173,25 +190,29 @@ export function TodoApp() {
         </div>
       ) : tasks === null ? (
         <p className="mt-10 text-muted">Carregando tarefas…</p>
-      ) : tasks.length === 0 ? (
-        <p className="mt-10 text-lg text-muted">Nenhuma tarefa ainda.</p>
       ) : (
-        <div className="mt-8 space-y-8">
-          <TaskGroup
-            title="Em aberto"
-            tasks={openTasks}
-            empty="Nada em aberto."
-            onToggle={handleToggle}
-            onDelete={handleDelete}
-          />
-          {completedTasks.length > 0 ? (
-            <TaskGroup
-              title="Concluídas"
-              tasks={completedTasks}
-              onToggle={handleToggle}
-              onDelete={handleDelete}
-            />
-          ) : null}
+        <div id="tour-list" className="mt-8">
+          {tasks.length === 0 ? (
+            <p className="text-lg text-muted">Nenhuma tarefa ainda.</p>
+          ) : (
+            <div className="space-y-8">
+              <TaskGroup
+                title="Em aberto"
+                tasks={openTasks}
+                empty="Nada em aberto."
+                onToggle={handleToggle}
+                onDelete={handleDelete}
+              />
+              {completedTasks.length > 0 ? (
+                <TaskGroup
+                  title="Concluídas"
+                  tasks={completedTasks}
+                  onToggle={handleToggle}
+                  onDelete={handleDelete}
+                />
+              ) : null}
+            </div>
+          )}
         </div>
       )}
 

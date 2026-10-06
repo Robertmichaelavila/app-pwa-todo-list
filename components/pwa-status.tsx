@@ -172,7 +172,7 @@ export function PwaStatus() {
           : "Verificando o aplicativo";
 
   return (
-    <section className="mt-10 space-y-3" aria-label="Instalação e conexão">
+    <section id="tour-status" className="mt-10 space-y-3" aria-label="Instalação e conexão">
       {canInstall && !standalone ? (
         <button
           type="button"
